@@ -376,7 +376,7 @@
                     this.update_status="updating process...";
 
                     try {
-                        const response = await fetch('http://127.0.0.1:8000/update_gallery/', {
+                        const response = await fetch('https://buildberg.onrender.com/update_gallery/', {
                             method: 'POST',
                             body: formData,
                             headers: {
@@ -421,10 +421,10 @@
 
                         const token = sessionStorage.getItem("adminHash");
                         if (!token) {
-                            window.location.href = "http://127.0.0.1:3000/admin.html";
+                            window.location.href = "https://azure-penguin-683374.hostingersite.com/admin.html";
                         }
                         try {
-                            const response = await axios.post('http://127.0.0.1:8000/deletegallery/',
+                            const response = await axios.post('https://buildberg.onrender.com/deletegallery/',
                                 {
                                     gallery_id: id,
                                     gallery_url: image_url
@@ -444,7 +444,7 @@
                             if (error.response) {
                                 if (error.response.status === 401) {
                                     alert("Unauthorized! Redirecting to home page...");
-                                    window.location.href = "http://127.0.0.1:3000/admin.html";
+                                    window.location.href = "https://azure-penguin-683374.hostingersite.com/admin.html";
                                 } else {
                                     this.delete_message = "Error: " + error.response.data.detail;
                                     alert(this.delete_message);
@@ -470,7 +470,7 @@
                 },
 
                 async fetchGalleries() {
-                    axios.get('http://127.0.0.1:8000/getgallery/')
+                    axios.get('https://buildberg.onrender.com/getgallery/')
                         .then(res => {
                             this.galleries = res.data.message
                             console.log("Fetched:", this.galleries)
@@ -498,7 +498,7 @@
                     }
 
                     try {
-                        const response = await fetch('http://127.0.0.1:8000/upload_image/', {
+                        const response = await fetch('https://buildberg.onrender.com/upload_image/', {
                             method: 'POST',
                             body: formData,
                             headers: {
@@ -531,16 +531,16 @@
                         return;
                     }
                     try {
-                        const response = await axios.post('http://localhost:8000/logout/', {}, {
+                        const response = await axios.post('https://buildberg.onrender.com/logout/', {}, {
                             headers: {
                                 Authorization: `Bearer ${token}`
                             }
                         });
 
                         sessionStorage.removeItem("adminHash");
-                        window.location.href = "http://127.0.0.1:3000/index.html";
+                        window.location.href = "https://azure-penguin-683374.hostingersite.com/index.html";
                     } catch (error) {
-                        window.location.href = "http://127.0.0.1:3000/index.html";
+                        window.location.href = "https://azure-penguin-683374.hostingersite.com/index.html";
                     }
                 }
             }
