@@ -407,7 +407,7 @@
         // }
       },
       created(){
-        axios.get('http://127.0.0.1:8000/getgallery/')
+        axios.get('https://buildberg.onrender.com/getgallery/')
         .then(response => {
           this.galleries = response.data.message;
         })
