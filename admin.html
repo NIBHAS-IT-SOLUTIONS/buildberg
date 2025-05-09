@@ -150,7 +150,7 @@
                         try {
                             this.error = '';
                             this.message = '';
-                            const response = await axios.post('http://localhost:8000/adminlogin/', {
+                            const response = await axios.post('https://buildberg.onrender.com/adminlogin/', {
                                 username: this.username,
                                 password: this.password
                             });
