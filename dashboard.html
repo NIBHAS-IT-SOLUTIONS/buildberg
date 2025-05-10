@@ -421,7 +421,7 @@
 
                         const token = sessionStorage.getItem("adminHash");
                         if (!token) {
-                            window.location.href = "https://azure-penguin-683374.hostingersite.com/admin.html";
+                            window.location.href = "https://buildbergdemo.buildberg.ae/admin.html";
                         }
                         try {
                             const response = await axios.post('https://buildberg.onrender.com/deletegallery/',
@@ -444,7 +444,7 @@
                             if (error.response) {
                                 if (error.response.status === 401) {
                                     alert("Unauthorized! Redirecting to home page...");
-                                    window.location.href = "https://azure-penguin-683374.hostingersite.com/admin.html";
+                                    window.location.href = "https://buildbergdemo.buildberg.ae/admin.html";
                                 } else {
                                     this.delete_message = "Error: " + error.response.data.detail;
                                     alert(this.delete_message);
@@ -538,9 +538,9 @@
                         });
 
                         sessionStorage.removeItem("adminHash");
-                        window.location.href = "https://azure-penguin-683374.hostingersite.com/index.html";
+                        window.location.href = "https://buildbergdemo.buildberg.ae/index.html";
                     } catch (error) {
-                        window.location.href = "https://azure-penguin-683374.hostingersite.com/index.html";
+                        window.location.href = "https://buildbergdemo.buildberg.ae/index.html";
                     }
                 }
             }
